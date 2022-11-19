@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <div id="heading">
+      <h1>Developing A Flight Delay Prediction Model Using Machine Learning</h1>
+      <h2>Team Id : PNT2022TMID36222</h2>
+    </div>
+    <div class="container">
+      <form action="/predict" method="post" >
+      
+        <label>Enter the flight number:</label>
+        <input type="text" id="flightnumber" name = "flightNumber" style="margin-left: 118px" />
+        <br />
+        
+        <span>Enter the date:</span>
+        <input type="date" id="date" name ="date" style="margin-left: 185px" />
+        <br />
+        
+        <span>Enter the Origin:</span>
+        <input type="text" id="origin" name ="origin" style="margin-left: 169px" />
+        <br />
+        
+        <span>Enter the destination:</span>
+        <input type="text" id="destination" name ="destination" style="margin-left: 136px" />
+        <br />
+   
+        <span style="margin-right: 145px">Departure delay:</span>
+        <input type="radio" id="y_delay" name ="deptDelay" value="yes" style="margin-left: 23px" onclick="y_check()"/>
+        <span>yes</span>
+        <input type="radio" id="n_delay" value="no" style="margin-left: 23px" onclick="n_check()" />
+        <span>no</span>
+        <br />
+        <span>Enter the Scheduled Arrival time:</span>
+        <input type="time" id="s_arr_time" name = "scheduledArrivalTime"style="margin-left: 50px" />
+        <br />
+
+        <input type="submit" value="submit" style="margin-left: 250px" class="submit-btn"/>
+      </form>
+      <br>
+
+    </div>
+  </body>
+  <script>
+    const y_delay = document.getElementById("y_delay");
+    const n_delay = document.getElementById("n_delay");
+
+    function y_check() {
+      if (y_delay.checked) {
+        n_delay.checked = false;
+      }
+    }
+    function n_check() {
+      if (n_delay.checked) {
+        y_delay.checked = false;
+      }
+    }
+  </script>
+</html>
